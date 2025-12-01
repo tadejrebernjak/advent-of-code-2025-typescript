@@ -1,14 +1,17 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "target": "es2020",
+    "module": "es2020",
+    "moduleResolution": "node",
     "baseUrl": ".",
     "rootDir": "src",
     "outDir": "dist",
     "declaration": true,
+    "resolveJsonModule": true,
     "preserveSymlinks": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./src/*"]
     }
