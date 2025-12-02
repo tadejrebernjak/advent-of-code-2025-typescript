@@ -1,5 +1,3 @@
-// Split into segments - 2 then 3 then 4 until n, check if all segments are equal on each iteration - if yes, return true
-
 import { isInt } from "@/utils/number";
 
 const hasPattern = (id: string, numSegments: number, segmentLength: number) => {
@@ -11,19 +9,23 @@ const hasPattern = (id: string, numSegments: number, segmentLength: number) => {
     const segment = id.slice(start, end);
 
     if (segment !== pattern) {
+      return false;
     }
   }
+
+  return true;
 };
 
 const isInvalidId = (id: string) => {
-  for (let numSegments = 2; numSegments < id.length / 2; numSegments++) {
+  for (let numSegments = 2; numSegments <= id.length; numSegments++) {
     const segmentLength = id.length / numSegments;
     const canBeSplit = isInt(segmentLength);
     if (!canBeSplit) {
       continue;
     }
 
-    if (pattern && character === pattern[0]) {
+    if (hasPattern(id, numSegments, segmentLength)) {
+      return true;
     }
   }
 
