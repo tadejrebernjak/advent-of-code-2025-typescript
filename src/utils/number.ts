@@ -9,3 +9,11 @@ export const mod = (number: number, mod: number): number => {
 export const isInt = (num: number): boolean => {
   return num % 1 === 0;
 };
+
+export const isEven = (num: number): boolean => {
+  return num % 2 === 0;
+};
+
+export const isOdd = (num: number): boolean => {
+  return isInt(num) && !isEven(num);
+};
